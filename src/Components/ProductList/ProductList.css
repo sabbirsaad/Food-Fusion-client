@@ -1,0 +1,10 @@
+.product-container img{
+    width: 70%;
+    height: 170px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.product-card{
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+}

@@ -1,0 +1,11 @@
+.top-nav{
+    background-color:bisque;
+}
+.top-nav a{
+    font-weight: 500;
+    margin-right: 20px;
+    color: black !important; 
+}
+.top-nav h2{
+    font-weight: 700;
+}
