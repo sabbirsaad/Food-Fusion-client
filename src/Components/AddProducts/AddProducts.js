@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import "./AddProducts.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faPlus, faThList } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logo from '../../Images/logo.png';
 
 const AddProducts = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -17,14 +18,17 @@ const AddProducts = () => {
       price: data.price,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addProduct`;
+    const url = `https://web-food-fusion.herokuapp.com/addProduct`;
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(eventData),
-    }).then((res) => alert("item added"));
+    })
+    .then((res) => {
+      alert("item added")
+    });
   };
 
   const handleImageUpload = (event) => {
@@ -46,14 +50,17 @@ const AddProducts = () => {
   return (
     <>
       <div class="sidebar">
+        <Link to="/">
+                <img src={logo} alt=""/>
+        </Link>
         <NavLink to="/manageProduct"><FontAwesomeIcon icon={faThList} /> Manage Product</NavLink>
-        <NavLink to="/addProducts"><FontAwesomeIcon icon={faPlus} /> Add Product</NavLink>
+        <NavLink to="/addProduct"><FontAwesomeIcon icon={faPlus} /> Add Product</NavLink>
         <NavLink to="/editProduct"><FontAwesomeIcon icon={faEdit} /> Edit Product</NavLink>
       </div>
       <div class="content">
         <form className="main-form" onSubmit={handleSubmit(onSubmit)}>
           <Container>
-            <Row>
+            <Row className="box">
               <Col md={6}>
                 <label>Product Name</label> <br />
                 <input

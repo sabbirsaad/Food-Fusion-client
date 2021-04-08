@@ -1,4 +1,28 @@
+.login-page{
+    height: 100vh;
+    padding-top: 180px;
+    background: #f5f3ea;
+}
 .google-login{
-    width: 100%;
-    margin: 45vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    padding: 30px 0px 60px 0px;
+    box-shadow: 5px 5px 22px gray;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+}
+.google-login h2{
+    font-size: 30px;
+    text-align: center;
+    width: 85%;
+    color: white;
+    font-weight: 600;
+    background-color:brown;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 100px;
 }

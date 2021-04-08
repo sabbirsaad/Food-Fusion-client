@@ -1,10 +1,25 @@
+.order-box{
+  background: #f5f3ea;
+  height: 150vh;
+}
+.order-list{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 8px lightgray;
+  border-radius: 5px;
+  background-color: white;
+}
 .order-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  
+    align-items: center;
     margin: 0 auto;
-    padding-top: 180px;
+    padding-top: 120px;
+}
+.order-container h2{
+  font-weight: 700;
+  margin-bottom: 50px;
 }
 .orders-table {
     border-collapse: collapse;
@@ -23,6 +38,6 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color:#212529;
     color: white;
   }

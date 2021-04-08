@@ -4,6 +4,8 @@ import "./App.css";
 import AddProducts from "./Components/AddProducts/AddProducts";
 import Admin from "./Components/Admin/Admin";
 import Checkout from "./Components/Checkout/Checkout";
+import Deals from "./Components/Deals/Deals";
+import EditProducts from "./Components/EditProducts/EditProducts";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
@@ -18,29 +20,35 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <Header />
         <Switch>
           <Route exact path="/home">
             <Home />
           </Route>
-          <PrivateRoute path="/admin">
-            <Admin />
-          </PrivateRoute>
-          <Route path="/auth/login">
-            <Login />
-          </Route>
           <PrivateRoute path="/checkout/:id">
             <Checkout />
-          </PrivateRoute>
-          <PrivateRoute path="/manageProduct">
-            <ManageProduct />
-          </PrivateRoute>
-          <PrivateRoute path="/addProducts">
-            <AddProducts />
           </PrivateRoute>
           <PrivateRoute path="/orders">
             <Orders />
           </PrivateRoute>
+          <PrivateRoute path="/admin">
+            <Admin />
+          </PrivateRoute>
+
+          <PrivateRoute path="/manageProduct">
+            <ManageProduct />
+          </PrivateRoute>
+          <PrivateRoute path="/addProduct">
+            <AddProducts />
+          </PrivateRoute>
+          <PrivateRoute path="/editProduct">
+            <EditProducts />
+          </PrivateRoute>
+          <PrivateRoute path="/deals">
+            <Deals />
+          </PrivateRoute>
+          <Route path="/auth/login">
+            <Login />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>

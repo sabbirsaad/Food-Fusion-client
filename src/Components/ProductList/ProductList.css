@@ -1,10 +1,23 @@
 .product-container img{
-    width: 70%;
+    width: 65%;
     height: 170px;
     margin: 0 auto;
-    padding: 10px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.product-container h3{
+    color: tomato;
 }
 .product-card{
-    box-shadow: 2px 2px 5px gray;
+    overflow: hidden;
+}
+.product-container img:hover{
+    transform:scale(1.15);
+    transition: all 0.3s;
+}
+.product-card:hover{
+    transform:scale(1.05);
+    transition: all 0.2s;
+    box-shadow: 3px 3px 8px lightgray;
     border-radius: 5px;
 }

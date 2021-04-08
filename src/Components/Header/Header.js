@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Header.css';
@@ -11,30 +11,31 @@ const Header = () => {
         <div>
         <nav className="top-nav fixed-top navbar navbar-light navbar-expand-lg">
             <div className="container">
-                <a className="navbar-brand" href="/">
+                <Link className="navbar-brand" to="/">
                 <img src={logo} alt=""/>
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse right-nav" id="navbarNavAltMarkup">
-                    <div className="navbar-nav ml-auto">
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="navbar-nav ml-auto right-nav">
                         <Link className="nav-link" aria-current="page" to="/home">Home</Link>
                         <Link className="nav-link" to="/orders">Orders</Link>
-                        <Link className="nav-link" to="/admin">Admin</Link>
+                        <Link className="nav-link" to="/addProduct">Admin</Link>
                         <Link className="nav-link" to="/deals">Deals</Link>
-                        {loggedInUser ? <Button variant="secondary" onClick={()=>setLoggedInUser(false)} >Sign out</Button> :
-                        <Link to="/auth/login">
-                        <button className="btn btn-success">Login</button> </Link>
-                        }
-                       
-                        
+                          
                     </div>
+                    {loggedInUser ? <Button variant="outline-secondary" onClick={()=>setLoggedInUser(false)} >Sign out</Button> :
+                        <Link to="/auth/login">
+                        <button className="btn btn-outline-success">Login</button> </Link>
+                        }
+                    <Link className="nav-link text-warning">{loggedInUser.name || loggedInUser.email }</Link>
                 </div>
             </div>
         </nav>
+
         </div>
     );
 };

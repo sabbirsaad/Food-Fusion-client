@@ -7,7 +7,7 @@ const ManageProductList = (props) => {
   const { name, weight, price, _id } = props.product;
 
   const handleDelete = (id) =>{
-    fetch(`http://localhost:5000/delete/${id}`,{
+    fetch(`https://web-food-fusion.herokuapp.com/delete/${id}`,{
       method: "DELETE"
     })
     .then(res => res.json())
@@ -17,7 +17,7 @@ const ManageProductList = (props) => {
   }
 
   return (
-    <div className="container">
+    <div>
       <table className="products-table">
             <tbody>
               <tr>

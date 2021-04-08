@@ -1,11 +1,24 @@
-.container-box{
+.box-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-    margin-left: 15px;
-    margin-right:15px;
+    padding-top: 30px;
+}
+.box-container h2{
+  font-size: 35px;
+  font-weight: 700;
+}
+.content-box{
+  background: #f5f3ea;
+}
+.box-table{
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 8px lightgray;
+  border-radius: 5px;
 }
 .products-table {
     border-collapse: collapse;
@@ -24,6 +37,6 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #212529;
     color: white;
   }

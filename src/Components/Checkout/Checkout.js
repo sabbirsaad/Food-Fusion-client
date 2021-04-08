@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router";
 import { UserContext } from "../../App";
+import Header from "../Header/Header";
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -10,7 +11,7 @@ const Checkout = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://web-food-fusion.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -27,7 +28,7 @@ const Checkout = () => {
       weight: product.weight,
       orderTime: new Date(),
     };
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://web-food-fusion.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOrder),
@@ -43,7 +44,9 @@ const Checkout = () => {
   const { name, price } = product;
   return (
     <>
-      <div className="checkout-box">
+     <Header />
+      <div className="container checkout-box">
+       
         <h2>Checkout</h2>
         <br />
         <table id="checkout-table">

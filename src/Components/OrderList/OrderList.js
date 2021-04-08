@@ -4,7 +4,7 @@ import "./OrderList.css";
 const OrderList = (props) => {
   const { name, weight, price, orderTime } = props.order;
   return (
-    <div className="container">
+    <div>
       <table className="orderlist-table">
         <tbody>
           <tr>

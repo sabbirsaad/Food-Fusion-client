@@ -8,14 +8,14 @@ const ProductList = (props) => {
   // console.log("all props",props.products[0].name);
   return (
     <div className="product-container">
-      <Card style={{ width: "19rem", border: "none" }} className="product-card">
+      <Card style={{ width: "19rem"}} className="product-card">
         <Card.Img variant="top" src={imageURL} />
         <Card.Body>
           <Card.Title className="text-center">
             {name} {weight}{" "}
           </Card.Title>
           <div className="d-flex justify-content-between mt-5">
-            <h2>${price}</h2>
+            <h3>${price}</h3>
             <Link to={`/checkout/${_id}`}>
               <Button variant="warning">
                 BUY NOW
