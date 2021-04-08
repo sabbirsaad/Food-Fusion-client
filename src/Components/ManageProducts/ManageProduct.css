@@ -1,7 +1,29 @@
 .container-box{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
+    margin-left: 15px;
+    margin-right:15px;
 }
+.products-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .products-table td, .products-table th {
+    padding: 8px;
+    width:100px;
+  }
+  .products-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .products-table tr:hover {background-color: #ddd;}
+  
+  .products-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }

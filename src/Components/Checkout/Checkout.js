@@ -1,37 +1,80 @@
-import React from "react";
-import './Checkout.css';
+import React, { useContext, useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import { useParams } from "react-router";
+import { UserContext } from "../../App";
+import "./Checkout.css";
 
 const Checkout = () => {
+  const { id } = useParams();
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/product/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setProduct(data);
+      });
+  }, [id]);
+
+  const handleOrder = () => {
+    const newOrder = {
+      ...loggedInUser,
+      name: product.name,
+      price: product.price,
+      imageURL: product.imageURL,
+      weight: product.weight,
+      orderTime: new Date(),
+    };
+    fetch("http://localhost:5000/addOrder", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newOrder),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Ordered successfully");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const { name, price } = product;
   return (
-    <div className="checkout-box">
-        <h2>Checkout</h2><br/>
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Description</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>1</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>1</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
+    <>
+      <div className="checkout-box">
+        <h2>Checkout</h2>
+        <br />
+        <table id="checkout-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{name}</td>
+              <td>1</td>
+              <td>${price}</td>
+            </tr>
+            <tr id="total">
               <td>Total</td>
               <td></td>
-              <td>Price</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+              <td>${price}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div className="d-flex container justify-content-end">
+        <Button variant="success" onClick={handleOrder}>
+          Checkout
+        </Button>
+      </div>
+    </>
   );
 };
 

@@ -1,9 +1,33 @@
 .checkout-box{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 70%;
     margin: 0px auto;
     padding-top: 150px;
     
 }
+#checkout-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #checkout-table td, #checkout-table th {
+    padding: 8px;
+  }
+  
+  #checkout-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #checkout-table tr:hover {background-color: #ddd;}
+  
+  #checkout-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  #total{
+      font-size: 20px;
+      font-weight: 600;
+      color:tomato;
+  }

@@ -29,12 +29,12 @@ function App() {
           <Route path="/auth/login">
             <Login />
           </Route>
-          <Route path="/checkout">
+          <PrivateRoute path="/checkout/:id">
             <Checkout />
-          </Route>
-          <Route path="/manageProduct">
+          </PrivateRoute>
+          <PrivateRoute path="/manageProduct">
             <ManageProduct />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/addProducts">
             <AddProducts />
           </PrivateRoute>

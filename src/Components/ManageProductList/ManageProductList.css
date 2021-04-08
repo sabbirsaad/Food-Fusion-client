@@ -1,0 +1,21 @@
+.products-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .products-table td{
+    padding: 8px;
+    width:100px;
+    font-weight: 500;
+  }
+  
+  .products-table tr:hover {background-color: #ddd;}
+
+  .products-table tr:nth-child(even){background-color: #f2f2f2;}
+  .icon{
+      background-color: red;
+      padding: 2px 5px;
+      border-radius: 6px;
+      color:white;
+      font-size: 18px;
+  }

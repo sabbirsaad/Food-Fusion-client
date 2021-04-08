@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import "./ProductList.css";
 
 const ProductList = (props) => {
-  const { imageURL, name, weight, price } = props.product;
+  const { imageURL, name, weight, price, _id } = props.product;
   // console.log("all props",props.products[0].name);
   return (
     <div className="product-container">
-      <Card style={{ width: "18rem", border: "none" }} className="product-card">
+      <Card style={{ width: "19rem", border: "none" }} className="product-card">
         <Card.Img variant="top" src={imageURL} />
         <Card.Body>
           <Card.Title className="text-center">
@@ -16,9 +16,9 @@ const ProductList = (props) => {
           </Card.Title>
           <div className="d-flex justify-content-between mt-5">
             <h2>${price}</h2>
-            <Link to="/checkout">
-              <Button className="px-4" variant="warning">
-                BUY
+            <Link to={`/checkout/${_id}`}>
+              <Button variant="warning">
+                BUY NOW
               </Button>
             </Link>
           </div>

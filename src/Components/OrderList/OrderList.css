@@ -1,0 +1,14 @@
+.orderlist-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .orderlist-table td{
+    padding: 8px;
+    width:100px;
+    font-weight: 500;
+  }
+  
+  .orderlist-table tr:hover {background-color: #ddd;}
+
+  .orderlist-table tr:nth-child(even){background-color: #f2f2f2;}

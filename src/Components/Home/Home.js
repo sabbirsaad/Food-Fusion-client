@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 import ProductList from '../ProductList/ProductList';
 import './Home.css';
+import spinner from '../../Images/spinner.gif';
 
 const Home = () => {
     const [ products, setProducts ] = useState([]);
@@ -12,7 +12,7 @@ const Home = () => {
     },[])
     return (
         <div className="products-container">
-            {products.length===0 && <Spinner animation="border" variant="success" />}
+            { products.length === 0 && <img style={{width: "100px ", marginTop: "180px"}} src={spinner} alt=""/> }
             {
                 products.map(product => <ProductList product={product}></ProductList>)
             }

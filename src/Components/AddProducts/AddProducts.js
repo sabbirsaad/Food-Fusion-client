@@ -24,7 +24,7 @@ const AddProducts = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(eventData),
-    }).then((res) => console.log("server"));
+    }).then((res) => alert("item added"));
   };
 
   const handleImageUpload = (event) => {
