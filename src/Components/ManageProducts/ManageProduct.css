@@ -10,6 +10,7 @@
   font-weight: 700;
 }
 .content-box{
+  min-height: 100vh;
   background: #f5f3ea;
 }
 .box-table{
